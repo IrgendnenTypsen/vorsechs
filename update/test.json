@@ -1,11 +1,11 @@
 {
-  "version": "1.8.8",
-  "url": "https://vorsechs.de/update/test-1.8.8.zip",
+  "version": "1.8.9",
+  "url": "https://vorsechs.de/update/test-1.8.9.zip",
   "minNative": 32,
   "apk": "https://vorsechs.de/vorsechs2-test.apk",
   "notes": [
-    "Impressum und Datenschutz unter Mehr",
-    "Kleine Verbesserungen"
+    "Update-Meldung kommt jetzt zuverlässig",
+    "Impressum und Datenschutz unter Mehr"
   ],
-  "at": "2026-11-06T15:48:07.932Z"
+  "at": "2026-11-06T15:53:50.034Z"
 }
