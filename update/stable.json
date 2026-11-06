@@ -1,12 +1,11 @@
 {
-  "version": "1.8.7",
-  "url": "https://vorsechs.de/update/stable-1.8.7.zip",
+  "version": "1.8.8",
+  "url": "https://vorsechs.de/update/stable-1.8.8.zip",
   "minNative": 32,
   "apk": "https://vorsechs.de/vorsechs.apk",
   "notes": [
-    "Updates kommen ab jetzt direkt in die App",
-    "Sperrbildschirm-Widget: Zugestellt, Später, Navi ohne Entsperren",
-    "Ole sagt die Adressen an, Namen klar getrennt"
+    "Impressum und Datenschutz unter Mehr",
+    "Kleine Verbesserungen"
   ],
-  "at": "2026-11-06T14:44:12.389Z"
+  "at": "2026-11-06T15:48:07.194Z"
 }
