@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0F1626">
+<title>vorsechs – Die Tour-App für Zeitungszusteller</title>
+<meta name="description" content="Kostenlose App für Zeitungszusteller: Abo-Liste rein, Sonderzeitungen in Reihenfolge, kürzeste Tour. Von einem Zusteller für Zusteller.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F1626'/%3E%3Cg transform='translate(14 11.5) scale(.72)'%3E%3Cpath d='M68 15 C49 22 31 38 30 62 A20 20 0 1 0 70 62 A20 20 0 1 0 30 62' fill='none' stroke='%23F2F2EF' stroke-width='12' stroke-linecap='round'/%3E%3Ccircle cx='68' cy='15' r='10' fill='%23FFB22E'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root { --bg:#0F1626; --s:#172036; --s2:#1E2942; --ink:#F2F2EF; --ink2:#9AA3B5; --line:#2A3654; --a:#FFB22E; --ok:#2FBF71; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 "Atkinson Hyperlegible", system-ui, sans-serif; }
+a { color: var(--a); }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+header { display: flex; align-items: center; gap: 10px; padding: 20px 0; }
+header b { font: 800 26px "Bricolage Grotesque", sans-serif; letter-spacing: -.03em; }
+.hero { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; padding: 28px 0 10px; }
+h1 { margin: 0; font: 800 clamp(44px, 9vw, 84px)/.95 "Bricolage Grotesque", sans-serif; letter-spacing: -.045em; }
+h1 span { color: var(--a); }
+.lead { font-size: 20px; color: #C8CED8; max-width: 30em; }
+.byline { display: inline-block; white-space: nowrap; background: var(--a); color: var(--bg); font-weight: 700; font-size: 14px; border-radius: 999px; padding: 5px 14px; }
+.dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 26px 0; }
+.btn { display: flex; flex-direction: column; gap: 2px; text-decoration: none; border-radius: 18px; padding: 18px 20px; background: var(--s); border: 1px solid var(--line); color: var(--ink); }
+.btn.main { background: var(--a); color: var(--bg); border: 0; }
+.btn b { font: 800 22px "Bricolage Grotesque", sans-serif; }
+.btn span { font-size: 14px; opacity: .8; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 10px 0 30px; }
+.card { background: var(--s); border-radius: 18px; padding: 18px; }
+.card b { display: block; font: 800 19px "Bricolage Grotesque", sans-serif; margin-bottom: 4px; }
+h2 { font: 800 30px "Bricolage Grotesque", sans-serif; letter-spacing: -.02em; margin: 34px 0 12px; }
+ol { padding-left: 22px; } li { margin: 6px 0; }
+details { background: var(--s); border-radius: 14px; padding: 14px 16px; margin: 8px 0; }
+summary { font-weight: 700; cursor: pointer; }
+footer { color: var(--ink2); font-size: 14px; padding: 30px 0 50px; border-top: 1px solid var(--line); margin-top: 40px; }
+@media (max-width: 560px) { .hero { grid-template-columns: 1fr 104px; gap: 8px; align-items: start; padding-top: 10px; } .mascot svg { width: 104px; height: 115px; } .byline { font-size: 13px; padding: 5px 12px; } }
+@keyframes hop { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+.mascot svg { animation: hop 2.4s ease-in-out infinite; color: var(--ink); }
+
+/* Ole winkt: Flügel, Blinzeln, Stirnlampe */
+.mascot svg { overflow: visible; }
+.mascot .wing-r { transform-box: view-box; transform-origin: 178px 148px; animation: wave 1.4s ease-in-out infinite; }
+.mascot .eye { transform-box: view-box; transform-origin: 92px 128px; animation: blink 4.5s infinite; }
+.mascot .glow { animation: glow 2.6s ease-in-out infinite; }
+@keyframes wave { 0%,100% { transform: rotate(0) } 50% { transform: rotate(-22deg) } }
+@keyframes blink { 0%,94%,100% { transform: scaleY(1) } 97% { transform: scaleY(.1) } }
+@keyframes glow { 0%,100% { opacity: .7 } 50% { opacity: 1 } }
+.stars { position: fixed; inset: 0; pointer-events: none; z-index: -1; background:
+  radial-gradient(1.5px 1.5px at 12% 8%, #F2F2EF, transparent), radial-gradient(1px 1px at 28% 22%, #F2F2EF, transparent),
+  radial-gradient(1.5px 1.5px at 46% 6%, #F2F2EF, transparent), radial-gradient(1px 1px at 63% 18%, #F2F2EF, transparent),
+  radial-gradient(1.5px 1.5px at 82% 10%, #F2F2EF, transparent), radial-gradient(1px 1px at 92% 30%, #F2F2EF, transparent),
+  radial-gradient(1px 1px at 6% 36%, #F2F2EF, transparent), radial-gradient(1px 1px at 72% 40%, #F2F2EF, transparent);
+  animation: twinkle 5s ease-in-out infinite alternate; opacity: .55; }
+@keyframes twinkle { to { opacity: .25 } }
+.qr { display: flex; gap: 18px; align-items: center; background: var(--s); border-radius: 18px; padding: 16px; margin: 0 0 26px; }
+.qr svg { width: 132px; height: 132px; flex: none; border-radius: 12px; }
+@media (max-width: 700px) { .qr { display: none; } }
+@media (prefers-reduced-motion: reduce) { .mascot *, .mascot svg, .stars { animation: none !important; } }
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<div class="wrap">
+  <header><svg viewBox="0 0 100 100" width="40" height="40" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#172036"/><g transform="translate(14 11.5) scale(.72)"><path d="M68 15 C49 22 31 38 30 62 A20 20 0 1 0 70 62 A20 20 0 1 0 30 62" fill="none" stroke="#F2F2EF" stroke-width="12" stroke-linecap="round"/><circle cx="68" cy="15" r="10" fill="#FFB22E"/></g></svg><b>vorsechs</b></header>
+  <section class="hero">
+    <div>
+      <h1>Fertig vor <span>sechs.</span></h1>
+      <p class="lead">Die kostenlose App für alle, die Zeitungen austragen. Abo-Liste rein – und du siehst jeden Morgen, wohin du musst und was in welchen Briefkasten gehört.</p>
+      <span class="byline">Von einem Zusteller für Zusteller</span>
+    </div>
+    <div class="mascot"><svg viewBox="0 0 240 266" width="210" height="233" role="img" aria-label="Ole, die vorsechs-Eule, winkt"><g class="glow"><circle cx="120" cy="58" r="46" fill="#FFB22E" opacity="0.16"/><circle cx="120" cy="58" r="28" fill="#FFB22E" opacity="0.22"/></g><path d="M90 240 q-10 16 2 18 q6 -6 12 0 q10 -2 6 -18z M150 240 q10 16 -2 18 q-6 -6 -12 0 q-10 -2 -6 -18z" fill="#FFB22E" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path class="wing-r" d="M186 152 C 210 140 226 118 228 92 C 206 100 188 116 172 136 Z" fill="#22304F" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><path d="M64 94 L44 64 Q70 64 94 78 Z M176 94 L196 64 Q170 64 146 78 Z" fill="#2E3E63" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><path d="M120 68 C 182 68 206 120 206 170 C 206 222 170 248 120 248 C 70 248 34 222 34 170 C 34 120 58 68 120 68 Z" fill="#2E3E63" stroke="currentColor" stroke-width="6"/><ellipse cx="120" cy="200" rx="50" ry="40" fill="#F2F2EF"/><path d="M100 192 q6 6 12 0 M128 192 q6 6 12 0 M112 210 q6 6 12 0 M94 214 q5 5 10 0 M136 214 q5 5 10 0" fill="none" stroke="#B8BFCC" stroke-width="3" stroke-linecap="round"/><path d="M120 104 C 104 92 62 94 58 128 C 56 156 84 166 120 156 C 156 166 184 156 182 128 C 178 94 136 92 120 104 Z" fill="#F2F2EF"/><g class="eye"><circle cx="92" cy="128" r="19" fill="#FFFFFF" stroke="#0F1626" stroke-width="4"/><circle cx="95" cy="129" r="10" fill="#0F1626"/><circle cx="99" cy="125" r="3.4" fill="#FFFFFF"/></g><path d="M134 130 q14 -12 28 0" fill="none" stroke="#0F1626" stroke-width="6" stroke-linecap="round"/><circle cx="72" cy="150" r="8" fill="#FFB22E" opacity="0.45"/><circle cx="168" cy="150" r="8" fill="#FFB22E" opacity="0.45"/><path d="M111 146 L129 146 L120 162 Z" fill="#FFB22E" stroke="#0F1626" stroke-width="3.5" stroke-linejoin="round"/><path d="M64 100 Q120 72 176 100" fill="none" stroke="#FFB22E" stroke-width="7" stroke-linecap="round"/><rect x="103" y="74" width="34" height="22" rx="7" fill="#0F1626" stroke="currentColor" stroke-width="3"/><circle cx="120" cy="85" r="7.5" fill="#FFB22E"/><path d="M42 158 C 28 186 36 218 62 230 C 60 204 58 182 60 160 Z" fill="#22304F" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><g transform="rotate(-16 58 220)"><rect x="24" y="204" width="62" height="30" rx="5" fill="#FFFFFF" stroke="currentColor" stroke-width="5"/><path d="M34 214h28M34 224h42" stroke="#0F1626" stroke-width="3.5" stroke-linecap="round"/><rect x="66" y="210" width="12" height="8" rx="2" fill="#FFB22E"/></g></svg></div>
+  </section>
+  <div class="dl">
+    <a class="btn main" href="vorsechs.apk" download><b>Für Android laden</b><span>Datei vorsechs.apk · ca. 9 MB</span></a>
+    <a class="btn" href="https://github.com/IrgendnenTypsen/vorsechs/releases/latest/download/vorsechs-Setup.exe"><b>Für Windows-PC</b><span>Installationsprogramm · ca. 85 MB</span></a>
+  </div>
+<div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" class="segno"><path fill="#fff" d="M0 0h37v37h-37z"/><path class="qrline" stroke="#0f1626" d="M2 2.5h7m3 0h1m2 0h1m1 0h7m1 0h1m2 0h7m-33 1h1m5 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m4 0h3m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m5 0h2m2 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m2 0h1m4 0h1m3 0h2m4 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-23 1h4m1 0h4m1 0h1m3 0h1m-24 1h3m1 0h2m3 0h3m3 0h6m1 0h1m6 0h2m-30 1h1m1 0h2m3 0h1m1 0h3m1 0h2m1 0h4m1 0h1m2 0h2m1 0h2m1 0h1m-32 1h1m4 0h1m1 0h2m1 0h1m1 0h5m2 0h2m1 0h3m1 0h3m1 0h2m-31 1h4m1 0h1m2 0h2m1 0h2m1 0h1m1 0h2m4 0h4m1 0h1m2 0h1m-33 1h1m1 0h1m1 0h7m1 0h4m2 0h1m3 0h1m1 0h2m1 0h3m1 0h1m-32 1h1m1 0h3m5 0h4m3 0h2m1 0h2m2 0h1m4 0h3m-32 1h1m1 0h1m2 0h3m1 0h1m2 0h2m3 0h5m4 0h1m2 0h1m-30 1h1m1 0h1m1 0h2m2 0h1m2 0h1m1 0h1m1 0h2m2 0h3m1 0h1m1 0h3m1 0h2m-30 1h1m4 0h1m1 0h1m1 0h5m3 0h2m1 0h3m1 0h2m1 0h1m1 0h1m-31 1h3m2 0h1m3 0h1m2 0h2m1 0h1m1 0h2m1 0h1m1 0h5m1 0h2m1 0h2m-33 1h4m1 0h3m2 0h1m2 0h1m1 0h1m4 0h3m3 0h3m1 0h2m-30 1h3m4 0h3m2 0h2m4 0h1m1 0h1m1 0h3m1 0h1m-23 1h1m1 0h2m1 0h1m2 0h2m1 0h2m2 0h1m2 0h1m4 0h2m1 0h1m-33 1h2m1 0h3m1 0h1m1 0h1m2 0h2m2 0h1m2 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1m-28 1h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m3 0h3m2 0h1m1 0h1m1 0h2m-32 1h2m1 0h1m2 0h8m1 0h2m5 0h2m2 0h3m2 0h1m-33 1h1m2 0h6m1 0h1m3 0h2m1 0h2m1 0h1m1 0h7m3 0h1m-25 1h1m1 0h1m1 0h1m1 0h1m2 0h3m3 0h2m3 0h2m-30 1h7m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h4m1 0h1m1 0h1m2 0h1m-32 1h1m5 0h1m1 0h1m2 0h2m1 0h5m1 0h5m3 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m7 0h2m1 0h2m2 0h8m1 0h2m-32 1h1m1 0h3m1 0h1m1 0h4m2 0h2m2 0h1m1 0h3m1 0h1m2 0h1m2 0h3m-33 1h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h3m1 0h1m3 0h1m1 0h4m2 0h1m-31 1h1m5 0h1m1 0h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h3m1 0h2m3 0h1m-33 1h7m2 0h2m1 0h3m1 0h3m1 0h2m4 0h1m1 0h3"/></svg>
+<div><b style="font: 800 20px 'Bricolage Grotesque', sans-serif">Am PC?</b><br>Handy-Kamera auf den Code halten – dann direkt aufs Handy laden.</div></div>
+  <div class="grid">
+    <div class="card"><b>Liste rein, fertig</b>Das Aboverzeichnis als PDF öffnen – auch wenn's nur ein Scan ist. Adressen findet die App selbst.</div>
+    <div class="card"><b>Nur was heute dran ist</b>Samstagszeitung nur samstags, Urlaubsunterbrechungen raus. Sonderzeitungen in Pack-Reihenfolge.</div>
+    <div class="card"><b>Kurzer Weg</b>Die beste Reihenfolge – über echte Wege, nicht durch Hauswände.</div>
+    <div class="card"><b>Handy in die Tasche</b>Profi-Modus: es vibriert nur, wenn an einem Haus heute was anders ist.</div>
+    <div class="card"><b>Urlaub? Tour weitergeben</b>Eine Datei per WhatsApp an deine Vertretung – mit deiner Reihenfolge, Notizen und Briefkasten-Fotos. Zwei Touren zusammenlegen geht auch.</div>
+    <div class="card"><b>Deine Daten bleiben bei dir</b>Kein Konto, keine Werbung. Namen und Adressen bleiben auf deinem Handy.</div>
+  </div>
+  <h2>So installierst du's auf Android</h2>
+  <ol>
+    <li>Oben auf <b>„Für Android laden“</b> tippen.</li>
+    <li>Datei öffnen. Android fragt einmal, ob dein Browser Apps installieren darf – <b>„Zulassen“</b>.</li>
+    <li><b>Installieren</b> tippen, öffnen, Liste importieren. Fertig.</li>
+  </ol>
+  <h2>Fragen</h2>
+  <details><summary>Kostet das was?</summary>Nein. Für Zusteller ist vorsechs kostenlos.</details>
+  <details><summary>Warum nicht im Play Store?</summary>Kommt noch. Bis dahin gibt's die App hier direkt – gleiche App, nur ohne Store.</details>
+  <details><summary>Funktioniert das mit meiner Liste?</summary>Gebaut für die Aboverzeichnisse der BNN. Andere Listen als Excel/CSV gehen auch – einfach ausprobieren.</details>
+  <details><summary>Wer steckt dahinter?</summary>Ein Zeitungszusteller aus Karlsruhe, der jeden Morgen selbst austrägt und die App für sich gebaut hat.</details>
+  <footer>vorsechs · Karten © OpenStreetMap-Mitwirkende · [KONTAKT]</footer>
+</div>
+</body>
+</html>
