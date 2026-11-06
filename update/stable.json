@@ -1,12 +1,12 @@
 {
-  "version": "1.8.5",
-  "url": "https://irgendnentypsen.github.io/vorsechs/update/stable-1.8.5.zip",
-  "minNative": 31,
-  "apk": "https://irgendnentypsen.github.io/vorsechs/vorsechs.apk",
+  "version": "1.8.7",
+  "url": "https://vorsechs.de/update/stable-1.8.7.zip",
+  "minNative": 32,
+  "apk": "https://vorsechs.de/vorsechs.apk",
   "notes": [
     "Updates kommen ab jetzt direkt in die App",
     "Sperrbildschirm-Widget: Zugestellt, Später, Navi ohne Entsperren",
     "Ole sagt die Adressen an, Namen klar getrennt"
   ],
-  "at": "2026-11-06T13:52:25.485Z"
+  "at": "2026-11-06T14:44:12.389Z"
 }

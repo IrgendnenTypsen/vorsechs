@@ -1,0 +1,10 @@
+{
+  "id": "zeit-2026-11",
+  "active": false,
+  "title": "Kurze Frage von Pascal",
+  "questions": [
+    { "id": "zeit", "text": "Wie viel Zeit sparst du pro Tour mit vorsechs?", "options": ["gar nichts", "bis 15 Minuten", "15–30 Minuten", "mehr als 30 Minuten"] },
+    { "id": "fehler", "text": "Vergisst du seltener Zeitungen oder Sonderzeitungen?", "options": ["ja, deutlich", "ein bisschen", "nein", "hab vorher auch nichts vergessen"] },
+    { "id": "weiter", "text": "Würdest du vorsechs anderen Zustellern empfehlen?", "options": ["auf jeden Fall", "eher ja", "eher nein"] }
+  ]
+}

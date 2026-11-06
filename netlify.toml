@@ -1,0 +1,9 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Update-Infos nie zwischenspeichern, sonst sehen Tester neue Versionen erst Stunden später
+[[headers]]
+  for = "/update/*.json"
+  [headers.values]
+    Cache-Control = "no-cache"
