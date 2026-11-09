@@ -1,11 +1,11 @@
 {
-  "version": "1.9.8",
-  "url": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/update/test-beta-1.9.8.zip",
-  "checksum": "4ddee931696cc2d79a973087c242669ea2419a1a4befaf396c4421fe668636ad",
+  "version": "1.9.9",
+  "url": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/update/test-beta-1.9.9.zip",
+  "checksum": "3c5ec7818c5d5099e5946f34486216d7d2ef3d33423e009e2710784cd0a2dd6d",
   "minNative": 37,
   "apk": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/beta/vorsechs2-test.apk",
   "notes": [
-    "Ole im Dark Mode ohne helle Umrandung"
+    "Ole lebt: er atmet, blinzelt, winkt, hüpft und legt den Kopf schief – immer mal zwischendurch"
   ],
-  "at": "2026-11-09T03:59:54.119Z"
+  "at": "2026-11-09T04:07:48.717Z"
 }
