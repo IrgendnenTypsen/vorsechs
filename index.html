@@ -32,6 +32,8 @@ h1 span { color: var(--a); }
 .card b { display: block; font: 800 19px "Bricolage Grotesque", sans-serif; margin-bottom: 4px; }
 h2 { font: 800 30px "Bricolage Grotesque", sans-serif; letter-spacing: -.02em; margin: 34px 0 12px; }
 ol { padding-left: 22px; } li { margin: 6px 0; }
+code { font: 12px ui-monospace, monospace; word-break: break-all; }
+.hash { margin: 6px 0; }
 details { background: var(--s); border-radius: 14px; padding: 14px 16px; margin: 8px 0; }
 summary { font-weight: 700; cursor: pointer; }
 footer { color: var(--ink2); font-size: 14px; padding: 30px 0 50px; border-top: 1px solid var(--line); margin-top: 40px; }
@@ -83,7 +85,9 @@ footer { color: var(--ink2); font-size: 14px; padding: 30px 0 50px; border-top: 
     <div class="card"><b>Liste rein, fertig</b>Das Aboverzeichnis als PDF öffnen – auch wenn's nur ein Scan ist. Adressen findet die App selbst.</div>
     <div class="card"><b>Nur was heute dran ist</b>Samstagszeitung nur samstags, Urlaubsunterbrechungen raus. Sonderzeitungen in Pack-Reihenfolge.</div>
     <div class="card"><b>Kurzer Weg</b>Die beste Reihenfolge – über echte Wege, nicht durch Hauswände.</div>
-    <div class="card"><b>Handy in die Tasche</b>Profi-Modus: es vibriert nur, wenn an einem Haus heute was anders ist.</div>
+    <div class="card"><b>Freihändig mit Kopfhörer</b>Ole sagt dir die nächste Adresse und was rein muss. Taste am Kopfhörer drücken = zugestellt. Läufst du falsch, sagt er Bescheid.</div>
+    <div class="card"><b>Handy bleibt in der Tasche</b>Fortschritt und nächste Adresse auf dem Sperrbildschirm – mit Knöpfen für Zugestellt, Später und Navi. Profi-Modus: es vibriert nur, wenn an einem Haus heute was anders ist.</div>
+    <div class="card"><b>Nichts verpassen</b>Neue Abos, Pausen und Kündigungen siehst du, bevor du losläufst. Dazu Tagesbericht und Verspätung melden mit einem Tipp.</div>
     <div class="card"><b>Urlaub? Tour weitergeben</b>Eine Datei per WhatsApp an deine Vertretung – mit deiner Reihenfolge, Notizen und Briefkasten-Fotos. Zwei Touren zusammenlegen geht auch.</div>
     <div class="card"><b>Deine Daten bleiben bei dir</b>Kein Konto, keine Werbung. Namen und Adressen bleiben auf deinem Handy.</div>
   </div>
@@ -93,6 +97,27 @@ footer { color: var(--ink2); font-size: 14px; padding: 30px 0 50px; border-top: 
     <li>Datei öffnen. Android fragt einmal, ob dein Browser Apps installieren darf – <b>„Zulassen“</b>.</li>
     <li><b>Installieren</b> tippen, öffnen, Liste importieren. Fertig.</li>
   </ol>
+  <h2>So installierst du's am PC</h2>
+  <ol>
+    <li>Auf <b>„Für Windows-PC“</b> klicken und die Datei öffnen.</li>
+    <li>Windows zeigt <b>„Der Computer wurde durch Windows geschützt“</b>. Auf <b>„Weitere Informationen“</b> klicken, dann <b>„Trotzdem ausführen“</b>.</li>
+    <li>Fertig. Mit dem Handy koppeln geht unter Mehr → Abgleich mit PC.</li>
+  </ol>
+  <h2 id="sicher">Warum warnt mein Gerät?</h2>
+  <div class="grid">
+    <div class="card"><b>Windows: „unbekannter Herausgeber“</b>Windows kennt nur Programme, die mit einem gekauften Zertifikat unterschrieben sind (ein paar hundert Euro im Jahr) oder die schon sehr viele Leute geladen haben. vorsechs ist neu und kostenlos – deshalb die blaue Warnung. Das heißt nicht, dass etwas gefunden wurde, sondern nur: „kenne ich noch nicht“.</div>
+    <div class="card"><b>Android: „unbekannte Quelle“</b>Android warnt bei jeder App, die nicht aus dem Play Store kommt. Play Protect fragt evtl. noch, ob du die App prüfen lassen willst – kannst du ruhig machen. Danach <b>„Trotzdem installieren“</b>.</div>
+    <div class="card"><b>Was die App darf</b>Nur Standort (für die Route), Benachrichtigungen (Sperrbildschirm), Vibration und Internet. Kein Zugriff auf Kontakte, Mikrofon, Fotos oder Nachrichten. Namen aus deiner Liste verlassen dein Handy nie – Adressen gehen nur ohne Namen an die Kartensuche.</div>
+  </div>
+  <details><summary><b>Selbst nachprüfen</b> – Virenscan und Prüfsummen</summary>
+    <p>Beide Dateien sind bei <b>VirusTotal</b> mit über 60 Virenscannern geprüft:</p>
+    <p>→ <a href="https://www.virustotal.com/gui/file/25401cf5de29b3ef2b814d9b2ec3bfe28d974aa01ff3758bd869a2d349f6088f" target="_blank" rel="noopener">Prüfbericht Windows-Datei</a><br>→ <a href="https://www.virustotal.com/gui/file/c46072ccb425b583de4829b0662660836b425083a4b6bf451d4f88fa7b8e3bab" target="_blank" rel="noopener">Prüfbericht Android-Datei</a></p>
+    <p>Die Prüfsumme (SHA-256) zeigt, dass deine Datei genau die geprüfte ist:</p>
+    <p class="hash">vorsechs-Setup.exe<br><code>25401cf5de29b3ef2b814d9b2ec3bfe28d974aa01ff3758bd869a2d349f6088f</code></p>
+    <p class="hash">vorsechs.apk<br><code>c46072ccb425b583de4829b0662660836b425083a4b6bf451d4f88fa7b8e3bab</code></p>
+    <p class="hash">Android-Signatur (bei jedem Update dieselbe)<br><code>30d7a434f646a8f7681e3398f8d28d8a4a2e1d7e291b5c669d05f60907beff16</code></p>
+    <p class="small">Windows: in PowerShell <code>Get-FileHash vorsechs-Setup.exe</code> eingeben und vergleichen.</p>
+  </details>
   <h2>Fragen</h2>
   <details><summary>Kostet das was?</summary>Nein. Für Zusteller ist vorsechs kostenlos.</details>
   <details><summary>Warum nicht im Play Store?</summary>Kommt noch. Bis dahin gibt's die App hier direkt – gleiche App, nur ohne Store.</details>
