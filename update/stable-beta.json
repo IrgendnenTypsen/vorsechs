@@ -1,13 +1,11 @@
 {
-  "version": "1.9.7",
-  "url": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/update/stable-beta-1.9.7.zip",
-  "checksum": "355919ce621fe793c717fe72b67893d46f352c4c7a79e5a3ed2b83ee41377b60",
+  "version": "1.9.8",
+  "url": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/update/stable-beta-1.9.8.zip",
+  "checksum": "8e879a09f8b756fe74962048a1b23076421552e515aaf7bb3130314ddcf06d35",
   "minNative": 37,
   "apk": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/beta/vorsechs.apk",
   "notes": [
-    "Ole trägt jetzt Outfits: Mütze und Schal bei Frost, Friesennerz bei Regen, Sonnenbrille im Sommer, Zipfelmütze im Dezember",
-    "Abzeichen sammeln: unter Mehr → Abzeichen, neue gibt's am Tour-Ende",
-    "Ole erinnert dich an deine Notizen am Haus"
+    "Ole im Dark Mode ohne helle Umrandung"
   ],
-  "at": "2026-11-09T03:58:00.140Z"
+  "at": "2026-11-09T03:59:53.520Z"
 }
