@@ -1,10 +1,11 @@
 {
-  "version": "1.9.0",
-  "url": "https://vorsechs.de/update/test-1.9.0.zip",
+  "version": "1.9.1",
+  "url": "https://vorsechs.de/update/test-1.9.1.zip",
   "minNative": 32,
   "apk": "https://vorsechs.de/vorsechs2-test.apk",
   "notes": [
-    "App-Tour: Ole zeigt dir beim Start, was vorsechs alles kann (auch unter Mehr)"
+    "App-Tour mit Ole beim ersten Start (auch unter Mehr)",
+    "Ole begrüßt dich jetzt auch in der normalen App"
   ],
-  "at": "2026-11-09T02:48:59.281Z"
+  "at": "2026-11-09T02:52:45.102Z"
 }
