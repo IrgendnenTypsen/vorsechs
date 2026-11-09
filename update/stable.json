@@ -1,11 +1,12 @@
 {
-  "version": "1.9.1",
-  "url": "https://vorsechs.de/update/stable-1.9.1.zip",
-  "minNative": 32,
+  "version": "1.9.2",
+  "url": "https://vorsechs.de/update/stable-1.9.2.zip",
+  "checksum": "214902f3cf139a768a1835d09d5ac503ccb7e99c9d6c369acc224a351c90325b",
+  "minNative": 36,
   "apk": "https://vorsechs.de/vorsechs.apk",
   "notes": [
-    "App-Tour mit Ole beim ersten Start (auch unter Mehr)",
-    "Ole begrüßt dich jetzt auch in der normalen App"
+    "Updates laden jetzt wirklich ohne Neuinstallation (einmal noch die App-Datei drüber installieren)",
+    "App-Tour mit Ole und Ole-Begrüßung"
   ],
-  "at": "2026-11-09T02:52:44.553Z"
+  "at": "2026-11-09T03:04:47.561Z"
 }
