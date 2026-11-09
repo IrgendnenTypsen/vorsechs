@@ -1,12 +1,13 @@
 {
-  "version": "1.9.4",
-  "url": "https://vorsechs.de/update/test-beta-1.9.4.zip",
-  "checksum": "a9766697ba83e04716ad6b50f5368e162ccd6fb643d7a4f5c92f34f6696ece52",
+  "version": "1.9.5",
+  "url": "https://vorsechs.de/update/test-beta-1.9.5.zip",
+  "checksum": "18fd5027baca65de9de3873055e771f0bb6779908f557ff85823ccc337590379",
   "minNative": 37,
   "apk": "https://vorsechs.de/beta/vorsechs2-test.apk",
   "notes": [
-    "Automatisch abhaken: vorerst ausgeschaltet (bald verfügbar)",
-    "Neu unter Mehr: Test-Updates vorab bekommen"
+    "Ole begrüßt dich passend zum Tag: Wetter, Verspätung, neue Abos, Samstag, Serie",
+    "Ole antippen – probier's mal fünfmal",
+    "Feierabend mit Konfetti, Vergleich zur letzten Woche und Bild zum Teilen"
   ],
-  "at": "2026-11-09T03:11:25.935Z"
+  "at": "2026-11-09T03:42:49.291Z"
 }
