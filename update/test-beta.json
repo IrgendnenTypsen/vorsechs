@@ -1,0 +1,12 @@
+{
+  "version": "1.9.4",
+  "url": "https://vorsechs.de/update/test-beta-1.9.4.zip",
+  "checksum": "a9766697ba83e04716ad6b50f5368e162ccd6fb643d7a4f5c92f34f6696ece52",
+  "minNative": 37,
+  "apk": "https://vorsechs.de/beta/vorsechs2-test.apk",
+  "notes": [
+    "Automatisch abhaken: vorerst ausgeschaltet (bald verfügbar)",
+    "Neu unter Mehr: Test-Updates vorab bekommen"
+  ],
+  "at": "2026-11-09T03:11:25.935Z"
+}
