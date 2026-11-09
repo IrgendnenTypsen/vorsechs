@@ -1,12 +1,12 @@
 {
-  "version": "1.9.2",
-  "url": "https://vorsechs.de/update/stable-1.9.2.zip",
-  "checksum": "214902f3cf139a768a1835d09d5ac503ccb7e99c9d6c369acc224a351c90325b",
-  "minNative": 36,
+  "version": "1.9.3",
+  "url": "https://vorsechs.de/update/stable-1.9.3.zip",
+  "checksum": "09c34bf32cf63cd0865284014ad2162b76cf5e5c621de27aa59c063eda00e349",
+  "minNative": 37,
   "apk": "https://vorsechs.de/vorsechs.apk",
   "notes": [
-    "Updates laden jetzt wirklich ohne Neuinstallation (einmal noch die App-Datei drüber installieren)",
-    "App-Tour mit Ole und Ole-Begrüßung"
+    "Sperrbildschirm: statt der ganzen App jetzt das Tour-Widget mit Fortschritt, nächster Adresse und Knöpfen",
+    "Einmal Benachrichtigungen erlauben, wenn gefragt"
   ],
-  "at": "2026-11-09T03:04:47.561Z"
+  "at": "2026-11-09T03:09:27.772Z"
 }
