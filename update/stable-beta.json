@@ -1,12 +1,13 @@
 {
-  "version": "1.9.6",
-  "url": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/update/stable-beta-1.9.6.zip",
-  "checksum": "54d490c5b72937fffb5f4291f2e67d61b99be995e4220e36e93c39220a9702d4",
+  "version": "1.9.7",
+  "url": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/update/stable-beta-1.9.7.zip",
+  "checksum": "355919ce621fe793c717fe72b67893d46f352c4c7a79e5a3ed2b83ee41377b60",
   "minNative": 37,
   "apk": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/beta/vorsechs.apk",
   "notes": [
-    "Test-Updates kommen jetzt von GitHub (spart Webseiten-Guthaben)",
-    "Ole: neuer Regen-Spruch"
+    "Ole trägt jetzt Outfits: Mütze und Schal bei Frost, Friesennerz bei Regen, Sonnenbrille im Sommer, Zipfelmütze im Dezember",
+    "Abzeichen sammeln: unter Mehr → Abzeichen, neue gibt's am Tour-Ende",
+    "Ole erinnert dich an deine Notizen am Haus"
   ],
-  "at": "2026-11-09T03:50:10.726Z"
+  "at": "2026-11-09T03:58:00.140Z"
 }
