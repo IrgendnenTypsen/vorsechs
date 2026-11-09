@@ -60,6 +60,71 @@ footer { color: var(--ink2); font-size: 14px; padding: 30px 0 50px; border-top: 
 .qr svg { width: 132px; height: 132px; flex: none; border-radius: 12px; }
 @media (max-width: 700px) { .qr { display: none; } }
 @media (prefers-reduced-motion: reduce) { .mascot *, .mascot svg, .stars { animation: none !important; } }
+
+/* App-Vorführung */
+.player { display: grid; grid-template-columns: 290px 1fr; gap: 36px; align-items: center; }
+.phone { position: relative; width: 290px; aspect-ratio: 390/844; border: 10px solid #05080F; border-radius: 44px; overflow: hidden; background: #F2F2EF; box-shadow: 0 0 0 2px var(--line), 0 30px 80px -20px #000; }
+.scr { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
+.scr.on { opacity: 1; }
+.scr img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.scr.on .pan { animation: pan 5s ease-in-out forwards; }
+@keyframes pan { from { transform: scale(1) } to { transform: scale(1.18) translate(-4%, -6%) } }
+.bars { position: absolute; z-index: 5; top: 6px; left: 14px; right: 14px; display: flex; gap: 4px; }
+.bars i { flex: 1; height: 3px; border-radius: 2px; background: rgba(15,22,38,.18); overflow: hidden; }
+.bars i::after { content: ""; display: block; height: 100%; width: 0; background: var(--a); }
+.bars i.past::after { width: 100%; }
+.bars i.now::after { animation: fill var(--dur, 5s) linear forwards; }
+@keyframes fill { to { width: 100% } }
+.tap { position: absolute; left: 50%; top: 64.6%; width: 54px; height: 54px; margin: -27px; border-radius: 50%; background: rgba(255,255,255,.55); border: 2px solid #fff; opacity: 0; }
+.scr.on .tap { animation: tap 5s ease forwards; }
+@keyframes tap { 0%,35% { opacity: 0; transform: scale(1.6) } 42% { opacity: 1; transform: scale(1) } 50% { opacity: 1; transform: scale(.8) } 60%,100% { opacity: 0; transform: scale(1.4) } }
+.toast { position: absolute; left: 8%; right: 8%; bottom: 11%; background: #0F1626; color: #F2F2EF; border-radius: 14px; padding: 10px 12px; font-size: 13px; font-weight: 700; opacity: 0; transform: translateY(10px); }
+.scr.on .toast { animation: toast 5s ease forwards; }
+@keyframes toast { 0%,52% { opacity: 0; transform: translateY(10px) } 60%,100% { opacity: 1; transform: none } }
+.ear { justify-content: center; }
+.wb .go { position: relative; } .wb .tap { left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px; }
+.ear, .lock { background: radial-gradient(120% 80% at 50% 0%, #22304F, #0F1626); color: #F2F2EF; display: flex; flex-direction: column; align-items: center; padding: 40px 18px 20px; gap: 12px; }
+.ear .ole svg { width: 120px; height: auto; color: #F2F2EF; overflow: visible; }
+.bubble { background: #F2F2EF; color: #0F1626; border-radius: 18px 18px 18px 4px; padding: 12px 14px; font-weight: 700; font-size: 15px; line-height: 1.35; min-height: 66px; width: 100%; }
+.say::after { content: "▍"; animation: blinkc .8s steps(1) infinite; }
+@keyframes blinkc { 50% { opacity: 0 } }
+.bud { display: flex; align-items: center; gap: 10px; margin-top: 6px; font-size: 13px; color: var(--ink2); }
+.bud svg { width: 46px; height: 46px; }
+.scr.on .bud svg { animation: press 5s ease forwards; }
+@keyframes press { 0%,58% { transform: none } 63% { transform: scale(.85) } 68%,100% { transform: none } }
+.ok { background: var(--ok); color: #0F1626; font-weight: 800; border-radius: 12px; padding: 8px 12px; font-size: 14px; opacity: 0; }
+.scr.on .ok { animation: toast 5s ease forwards; animation-delay: .6s; }
+.lock { padding-top: 46px; gap: 4px; }
+.clock { font: 800 64px/1 "Bricolage Grotesque", sans-serif; letter-spacing: -.03em; }
+.date { font-size: 14px; color: #C8CED8; margin-bottom: 22px; }
+.widget { width: 100%; background: rgba(242,242,239,.95); color: #0F1626; border-radius: 20px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; text-align: left; }
+.wh { display: flex; justify-content: space-between; font-size: 12px; } .wh b { font-family: "Bricolage Grotesque", sans-serif; }
+.wt { font: 800 20px "Bricolage Grotesque", sans-serif; } .ws { font-size: 13px; color: #45506A; }
+.wbar { height: 6px; border-radius: 3px; background: #D9DCE3; overflow: hidden; margin: 4px 0; }
+.wbar i { display: block; height: 100%; width: 64%; background: var(--ok); }
+.scr.on .wbar i { animation: grow 5s ease forwards; } @keyframes grow { from { width: 57% } 60% { width: 57% } 70%,to { width: 71% } }
+.wb { display: flex; gap: 6px; } .wb span { flex: 1; text-align: center; font-size: 12px; font-weight: 700; padding: 7px 0; border-radius: 10px; background: #E4E6EB; }
+.wb .go { background: var(--ok); color: #fff; }
+.hint { margin-top: auto; font-size: 12px; color: var(--ink2); }
+.steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.steps button { all: unset; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: column; gap: 2px; width: 100%; padding: 12px 16px; border-radius: 16px; border-left: 4px solid transparent; color: var(--ink2); }
+.steps b { font: 800 21px "Bricolage Grotesque", sans-serif; color: var(--ink2); }
+.steps span { display: none; font-size: 16px; }
+.steps li.on button { background: var(--s); border-left-color: var(--a); color: #C8CED8; }
+.steps li.on b { color: var(--ink); } .steps li.on span { display: block; }
+.steps button:focus-visible { outline: 2px solid var(--a); }
+.also { color: var(--ink2); font-size: 15px; margin: 22px 0 0; } .also b { color: var(--ink); }
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0 10px; }
+.values div { background: var(--s); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; }
+.values b { font: 800 19px "Bricolage Grotesque", sans-serif; color: var(--a); } .values span { font-size: 14px; color: #C8CED8; }
+@media (max-width: 700px) {
+  .player { grid-template-columns: 1fr; justify-items: center; gap: 18px; }
+  .phone { width: min(270px, 72vw); }
+  .steps { width: 100%; min-height: 8.5em; } .steps li:not(.on) { display: none; }
+  .steps li.on button { border-left: 0; text-align: center; background: none; padding: 0 6px; }
+  .values { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .scr.on .pan, .scr.on .tap { animation: none; } }
 </style>
 </head>
 <body>
@@ -81,16 +146,48 @@ footer { color: var(--ink2); font-size: 14px; padding: 30px 0 50px; border-top: 
 <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" class="segno"><path fill="#fff" d="M0 0h29v29h-29z"/><path class="qrline" stroke="#0f1626" d="M2 2.5h7m4 0h1m1 0h2m3 0h7m-25 1h1m5 0h1m3 0h1m1 0h1m1 0h1m3 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m4 0h1m1 0h2m3 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h3m1 0h4m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m3 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-17 1h5m1 0h2m-15 1h2m3 0h1m4 0h5m2 0h2m1 0h1m-22 1h1m2 0h3m1 0h2m6 0h2m1 0h2m1 0h1m1 0h2m-25 1h5m1 0h1m1 0h1m1 0h7m2 0h1m1 0h2m1 0h1m-25 1h2m2 0h1m4 0h2m1 0h1m4 0h3m1 0h1m-22 1h4m1 0h2m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m5 0h1m-22 1h1m9 0h1m1 0h5m3 0h2m-25 1h2m2 0h3m5 0h1m2 0h1m1 0h2m2 0h2m1 0h1m-23 1h1m4 0h1m1 0h2m2 0h3m2 0h4m-22 1h4m1 0h2m3 0h3m2 0h6m2 0h1m-16 1h1m5 0h1m1 0h1m3 0h1m3 0h1m-25 1h7m2 0h6m1 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m3 0h1m1 0h1m1 0h3m3 0h1m2 0h2m-25 1h1m1 0h3m1 0h1m2 0h3m1 0h1m1 0h6m2 0h2m-25 1h1m1 0h3m1 0h1m2 0h2m3 0h2m1 0h1m2 0h1m1 0h2m-24 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h3m1 0h2m-25 1h1m5 0h1m1 0h1m2 0h4m1 0h1m2 0h2m-21 1h7m7 0h1m1 0h1m4 0h1m2 0h1"/></svg>
 
 <div><b style="font: 800 20px 'Bricolage Grotesque', sans-serif">Am PC?</b><br>Handy-Kamera auf den Code halten – dann direkt aufs Handy laden.</div></div>
-  <div class="grid">
-    <div class="card"><b>Liste rein, fertig</b>Das Aboverzeichnis als PDF öffnen – auch wenn's nur ein Scan ist. Adressen findet die App selbst.</div>
-    <div class="card"><b>Nur was heute dran ist</b>Samstagszeitung nur samstags, Urlaubsunterbrechungen raus. Sonderzeitungen in Pack-Reihenfolge.</div>
-    <div class="card"><b>Kurzer Weg</b>Die beste Reihenfolge – über echte Wege, nicht durch Hauswände.</div>
-    <div class="card"><b>Freihändig mit Kopfhörer</b>Ole sagt dir die nächste Adresse und was rein muss. Taste am Kopfhörer drücken = zugestellt. Läufst du falsch, sagt er Bescheid.</div>
-    <div class="card"><b>Handy bleibt in der Tasche</b>Fortschritt und nächste Adresse auf dem Sperrbildschirm – mit Knöpfen für Zugestellt, Später und Navi. Profi-Modus: es vibriert nur, wenn an einem Haus heute was anders ist.</div>
-    <div class="card"><b>Nichts verpassen</b>Neue Abos, Pausen und Kündigungen siehst du, bevor du losläufst. Dazu Tagesbericht und Verspätung melden mit einem Tipp.</div>
-    <div class="card"><b>Urlaub? Tour weitergeben</b>Eine Datei per WhatsApp an deine Vertretung – mit deiner Reihenfolge, Notizen und Briefkasten-Fotos. Zwei Touren zusammenlegen geht auch.</div>
-    <div class="card"><b>Deine Daten bleiben bei dir</b>Kein Konto, keine Werbung. Namen und Adressen bleiben auf deinem Handy.</div>
+  <section class="show" aria-label="So funktioniert vorsechs">
+  <h2>So läuft dein Morgen</h2>
+  <div class="player">
+    <div class="phone" aria-hidden="true">
+      <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="scr on"><img src="img/app-list.webp" alt="" loading="lazy"></div>
+      <div class="scr"><img class="pan" src="img/app-map.webp" alt="" loading="lazy"></div>
+      <div class="scr"><img src="img/app-drive.webp" alt="" loading="lazy"><span class="tap"></span><span class="toast">✓ Uhlandstraße 5 zugestellt</span></div>
+      <div class="scr ear">
+        <div class="ole"></div>
+        <div class="bubble"><span class="say" data-text="Nächster Halt: Goethestraße 18. Bei Wolf: zweimal BNN."></span></div>
+        <div class="bud"><svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#F2F2EF" stroke-width="3.5" stroke-linecap="round"><path d="M8 30v-6a16 16 0 0 1 32 0v6"/><rect x="5" y="28" width="9" height="14" rx="3.5" fill="#FFB22E" stroke="#FFB22E"/><rect x="34" y="28" width="9" height="14" rx="3.5" fill="#FFB22E" stroke="#FFB22E"/></svg><span>Taste drücken</span></div>
+        <div class="ok">✓ zugestellt – weiter zur 19</div>
+      </div>
+      <div class="scr lock">
+        <div class="clock">04:12</div><div class="date">Montag, 9. November</div>
+        <div class="widget">
+          <div class="wh"><b>vorsechs</b><span>Tour 12 · Weststadt</span></div>
+          <div class="wt">Körnerstraße 9</div><div class="ws">2× BNN · noch 4 Adressen</div>
+          <div class="wbar"><i></i></div>
+          <div class="wb"><span class="go">Zugestellt<span class="tap"></span></span><span>Später</span><span>Navi</span></div>
+        </div>
+        <div class="hint">Ohne Entsperren</div>
+      </div>
+      <div class="scr"><img src="img/app-done.webp" alt="" loading="lazy"></div>
+    </div>
+    <ol class="steps">
+      <li><button type="button"><b>Liste rein. Fertig.</b><span>Aboverzeichnis als PDF öffnen – auch wenn's nur ein Scan ist. Ole zeigt dir jeden Morgen nur, was heute wirklich dran ist.</span></button></li>
+      <li><button type="button"><b>Kürzester Weg</b><span>Die App rechnet die beste Reihenfolge über alle Häuser. Passt dir was nicht, schiebst du's einfach um.</span></button></li>
+      <li><button type="button"><b>Ein Tipp pro Haus</b><span>Großer grüner Knopf, mit Handschuhen treffbar. Gleiche Häuser hakst du in einem Rutsch ab. Sonderzeitungen kommen in Pack-Reihenfolge.</span></button></li>
+      <li><button type="button"><b>Freihändig mit Kopfhörer</b><span>Ole sagt dir Adresse und Menge an. Taste am Kopfhörer = zugestellt. Läufst du falsch, sagt er Bescheid.</span></button></li>
+      <li><button type="button"><b>Handy bleibt in der Tasche</b><span>Fortschritt und nächstes Haus auf dem Sperrbildschirm – mit Knöpfen, ohne Entsperren.</span></button></li>
+      <li><button type="button"><b>Fertig vor sechs.</b><span>Tagesbericht ans Depot mit einem Tipp. Und morgen siehst du vorher, was sich geändert hat.</span></button></li>
+    </ol>
   </div>
+  <p class="also"><b>Außerdem:</b> Tour an die Vertretung weitergeben · Verspätung melden · Wetter-Warnung · Offline-Karte · Abgleich mit dem PC</p>
+  <div class="values">
+    <div><b>Kostenlos</b><span>Kein Abo, keine Werbung</span></div>
+    <div><b>Ohne Konto</b><span>Laden, Liste rein, los</span></div>
+    <div><b>Deine Daten</b><span>Namen bleiben auf deinem Handy</span></div>
+  </div>
+  </section>
   <h2>So installierst du's auf Android</h2>
   <ol>
     <li>Oben auf <b>„Für Android laden“</b> tippen.</li>
@@ -129,6 +226,32 @@ footer { color: var(--ink2); font-size: 14px; padding: 30px 0 50px; border-top: 
 document.querySelectorAll('.dl a').forEach((a) => a.addEventListener('click', () => {
   try { fetch('/api/ping', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ev: 'download', kind: a.href.includes('.exe') ? 'exe' : 'apk' }) }); } catch (e) { /* egal */ }
 }));
+</script>
+<script>
+// Vorführung: Szenen laufen wie ein kurzes Video, Klick auf einen Schritt springt hin
+(() => {
+  const ph = document.querySelector('.phone'); if (!ph) return;
+  const scr = [...ph.querySelectorAll('.scr')], bars = [...ph.querySelectorAll('.bars i')], steps = [...document.querySelectorAll('.steps li')];
+  const ole = document.querySelector('.mascot svg'); if (ole) ph.querySelector('.ear .ole').append(ole.cloneNode(true));
+  const DUR = 5000; let i = 0, timer = null, typer = null, visible = false;
+  function type(el) {
+    clearInterval(typer); const t = el.dataset.text; let n = 0; el.textContent = '';
+    typer = setInterval(() => { el.textContent = t.slice(0, ++n); if (n >= t.length) clearInterval(typer); }, 45);
+  }
+  function show(k) {
+    i = (k + scr.length) % scr.length;
+    scr.forEach((s, j) => { s.classList.toggle('on', j === i); if (j === i) s.querySelectorAll('*').forEach((e) => { e.style.animation = 'none'; e.offsetWidth; e.style.animation = ''; }); });
+    bars.forEach((b, j) => { b.className = j < i ? 'past' : ''; }); void bars[i].offsetWidth; bars[i].className = 'now';
+    steps.forEach((s, j) => s.classList.toggle('on', j === i));
+    const say = scr[i].querySelector('.say'); if (say) type(say);
+    clearTimeout(timer); if (visible) timer = setTimeout(() => show(i + 1), DUR);
+  }
+  ph.style.setProperty('--dur', DUR + 'ms');
+  steps.forEach((s, j) => s.querySelector('button').addEventListener('click', () => show(j)));
+  ph.addEventListener('click', () => show(i + 1));
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) show(i); else clearTimeout(timer); }, { threshold: .35 }).observe(ph);
+  show(0);
+})();
 </script>
 </div>
 </body>
