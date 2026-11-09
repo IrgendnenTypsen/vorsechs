@@ -1,0 +1,12 @@
+{
+  "version": "1.9.6",
+  "url": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/update/stable-beta-1.9.6.zip",
+  "checksum": "54d490c5b72937fffb5f4291f2e67d61b99be995e4220e36e93c39220a9702d4",
+  "minNative": 37,
+  "apk": "https://raw.githubusercontent.com/IrgendnenTypsen/vorsechs/beta/beta/vorsechs.apk",
+  "notes": [
+    "Test-Updates kommen jetzt von GitHub (spart Webseiten-Guthaben)",
+    "Ole: neuer Regen-Spruch"
+  ],
+  "at": "2026-11-09T03:50:10.726Z"
+}
